@@ -19,8 +19,14 @@ For documentation on how to use the OpenBB AI SDK (highly recommended!), see the
 
 **Want to get started quickly?** Use our quick-start script:
 ```bash
+# macOS/Linux
 ./quick-start.sh
+
+# Windows
+quick-start.bat
 ```
+
+**Want to verify your setup?** Check out the [Verification Guide](./VERIFICATION_GUIDE.md) to ensure everything is working correctly before integrating with OpenBB.
 
 ## Examples
 If you prefer diving straight into code, we have a growing list of examples of custom agents in this repository, varying in complexity and features:
