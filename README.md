@@ -10,14 +10,16 @@ For documentation on how to use the OpenBB AI SDK (highly recommended!), see the
 
 ## 🚀 Quick Start
 
-**New to integrating agents with OpenBB?** Check out our comprehensive [Integration Guide](./INTEGRATION_GUIDE.md) for step-by-step instructions on:
-- Setting up your development environment
-- Integrating agents with OpenBB Desktop
-- Integrating agents with OpenBB Web
-- Deployment options (localhost, ngrok, cloud)
-- Troubleshooting common issues
+👉 **[Start Here: GETTING_STARTED.md](./GETTING_STARTED.md)** - Complete guide to get up and running in 5 minutes!
 
-**Want to get started quickly?** Use our quick-start script:
+### Additional Resources
+
+- **[Integration Guide](./INTEGRATION_GUIDE.md)** - Detailed instructions for OpenBB Desktop & Web integration
+- **[Verification Guide](./VERIFICATION_GUIDE.md)** - Test your agent setup
+- **[Deployment Guide](./DEPLOYMENT.md)** - Docker and cloud deployment options
+
+### Quick Start Scripts
+
 ```bash
 # macOS/Linux
 ./quick-start.sh
@@ -25,8 +27,6 @@ For documentation on how to use the OpenBB AI SDK (highly recommended!), see the
 # Windows
 quick-start.bat
 ```
-
-**Want to verify your setup?** Check out the [Verification Guide](./VERIFICATION_GUIDE.md) to ensure everything is working correctly before integrating with OpenBB.
 
 ## Examples
 If you prefer diving straight into code, we have a growing list of examples of custom agents in this repository, varying in complexity and features:
