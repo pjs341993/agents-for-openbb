@@ -8,6 +8,20 @@ It depends heavily on the [OpenBB AI SDK](https://github.com/OpenBB-finance/open
 
 For documentation on how to use the OpenBB AI SDK (highly recommended!), see the [OpenBB AI SDK README](https://github.com/OpenBB-finance/openbb-ai).
 
+## 🚀 Quick Start
+
+**New to integrating agents with OpenBB?** Check out our comprehensive [Integration Guide](./INTEGRATION_GUIDE.md) for step-by-step instructions on:
+- Setting up your development environment
+- Integrating agents with OpenBB Desktop
+- Integrating agents with OpenBB Web
+- Deployment options (localhost, ngrok, cloud)
+- Troubleshooting common issues
+
+**Want to get started quickly?** Use our quick-start script:
+```bash
+./quick-start.sh
+```
+
 ## Examples
 If you prefer diving straight into code, we have a growing list of examples of custom agents in this repository, varying in complexity and features:
 
