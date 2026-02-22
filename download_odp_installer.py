@@ -10,6 +10,7 @@ import argparse
 import platform
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 try:
     import httpx
@@ -33,14 +34,12 @@ FALLBACK_URLS = {
 def get_os_type():
     """Detect the operating system."""
     system = platform.system().lower()
-    if system == "darwin":
-        return "macos"
-    elif system == "windows":
-        return "windows"
-    elif system == "linux":
-        return "linux"
-    else:
-        return "unknown"
+    os_mapping = {
+        "darwin": "macos",
+        "windows": "windows",
+        "linux": "linux",
+    }
+    return os_mapping.get(system, "unknown")
 
 
 def get_installer_pattern(os_type):
@@ -51,6 +50,19 @@ def get_installer_pattern(os_type):
         "linux": [".AppImage", ".deb", ".rpm", "Linux"],
     }
     return patterns.get(os_type, [])
+
+
+def extract_filename_from_url(url):
+    """Extract filename from URL using proper URL parsing."""
+    parsed = urlparse(url)
+    # Get the last part of the path
+    filename = parsed.path.rstrip("/").split("/")[-1]
+
+    # Validate that we got a reasonable filename
+    if not filename or "." not in filename:
+        return None
+
+    return filename
 
 
 def fetch_latest_release():
@@ -162,11 +174,14 @@ def main():
         args.destination.mkdir(parents=True, exist_ok=True)
 
         # Use provided filename or extract from URL
-        filename = args.filename if args.filename else args.url.split("/")[-1]
+        if args.filename:
+            filename = args.filename
+        else:
+            filename = extract_filename_from_url(args.url)
 
-        if not filename or filename == args.url:
+        if not filename:
             print(
-                "Error: Could not determine filename. Please provide --filename option."
+                "Error: Could not determine filename from URL. Please provide --filename option."
             )
             sys.exit(1)
 
@@ -209,7 +224,11 @@ def main():
             sys.exit(1)
 
         # Extract filename from URL
-        filename = fallback_url.split("/")[-1]
+        filename = extract_filename_from_url(fallback_url)
+
+        if not filename:
+            print(f"Error: Could not extract filename from URL: {fallback_url}")
+            sys.exit(1)
 
         # Create destination directory if it doesn't exist
         args.destination.mkdir(parents=True, exist_ok=True)
