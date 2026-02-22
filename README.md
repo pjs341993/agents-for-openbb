@@ -8,6 +8,25 @@ It depends heavily on the [OpenBB AI SDK](https://github.com/OpenBB-finance/open
 
 For documentation on how to use the OpenBB AI SDK (highly recommended!), see the [OpenBB AI SDK README](https://github.com/OpenBB-finance/openbb-ai).
 
+## Download OpenBB Desktop Platform (ODP)
+
+Need to download the OpenBB Desktop Platform installer? We've got you covered!
+
+Use the included `download_odp_installer.py` script to easily download the latest ODP installer for your operating system:
+
+```bash
+# Simple download (auto-detects your OS)
+python3 download_odp_installer.py
+
+# List available installers
+python3 download_odp_installer.py --list
+
+# Download for a specific OS
+python3 download_odp_installer.py -o macos
+```
+
+For more details, see [README_ODP_INSTALLER.md](./README_ODP_INSTALLER.md).
+
 ## Examples
 If you prefer diving straight into code, we have a growing list of examples of custom agents in this repository, varying in complexity and features:
 
