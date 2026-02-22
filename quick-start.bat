@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 REM OpenBB Agent Quick Start Script for Windows
 REM This script helps you quickly set up and run an OpenBB agent
 

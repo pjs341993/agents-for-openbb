@@ -42,6 +42,7 @@ For this guide, we'll use `30-vanilla-agent-raw-widget-data` as an example.
 
 1. **Clone the repository** (if not already done):
    ```bash
+   # Replace with your repository URL if you've forked this
    git clone https://github.com/pjs341993/agents-for-openbb.git
    cd agents-for-openbb
    ```

@@ -34,7 +34,7 @@ This repository includes comprehensive documentation:
 ### Step 1: Clone and Setup
 
 ```bash
-# Clone the repository
+# Clone the repository (replace with your fork if needed)
 git clone https://github.com/pjs341993/agents-for-openbb.git
 cd agents-for-openbb
 
